@@ -1,0 +1,41 @@
+<div class="clearfix"></div>
+<div class="notifications">
+  <div class="notice">
+    <% if flash.notice %>
+      <p class="notice"><%= flash.notice %></p>
+    <% end %>
+  </div>
+</div>
+<div class="container-fiuld room-posts">
+  <h4 class="pb-4">登録済みルーム一覧</h4>
+  <table>
+    <thead>
+      <tr align="center">
+        <th>ルーム画像</th>
+        <th>ルーム名</th>
+        <th>ルーム紹介</th>
+        <th>料金</th>
+        <th>作成日</th>
+        <th>投稿者</th>
+        <th>投稿削除</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% @rooms.each do |room| %>
+      <tr align="center">
+        <td class="posts-name"><%= link_to image_tag room.image.to_s ,width: '240px' ,height: '140px' %></td>
+        <td><%= link_to "#{room.room_name}", room %></td>
+        <td><%= room.description %></td>
+        <td class="price-icon"><%= room.price %></td>
+        <td><%= room.created_at %></td>
+        <td><%= current_user.name %></td>
+        <% if room.user_id == current_user.id %>
+          <td><%= link_to "削除", room_path(room.id), method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

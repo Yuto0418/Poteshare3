@@ -10,6 +10,37 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-left-nav">
+          <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+        </div>
+        <div class="header-right-nav">
+        <div class="nav-item">
+          <% if user_signed_in? %> 
+          <!-- ユーザーがログインしていた時の処理 -->
+            <h4 class="nav-item d-sm-inline-block d-none"> <%= current_user.name %> </h4>
+            <div class="nav-item" id="nav_f">
+              <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="">
+              <ul class="header-nav-menu" id="target">
+                <li><%= link_to "ルーム登録",'/rooms/new', class:'list' %></li>
+                <li><%= link_to "予約済みルーム一覧",'/reservations/index', class:'list' %></li>
+                <li><%= link_to "登録済みルーム一覧", '/rooms/index', class:'list' %></li>
+                <li><%= link_to "設定", '/users/account', class:'list' %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:'list' %></li>
+              </ul>
+            </div>
+          <% else %>
+          <!-- ユーザーがログインしていなかった時の処理 -->
+            <%= link_to "ログイン", new_user_session_path, class: 'btn btn-primary' %> <!-- ログイン画面に移行する -->
+            <%= link_to "登録する", new_user_registration_path, class: 'btn btn-secondary' %> <!-- 新規登録画面に移行する -->
+          <% end %>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer class="footer">
+      <p>© 2021 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

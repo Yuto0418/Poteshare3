@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    @rooms = current_user.rooms.all
   end
   
   def new
@@ -12,13 +12,18 @@ class RoomsController < ApplicationController
     @room.user_id = current_user.id
     if @room.save
       flash[:notice] = "ルーム情報を新規登録しました"
-      redirect_to :rooms
+      redirect_to @room
     else
       render "new"
     end
   end
 
   def show
+    @room = Room.find(params[:id])
+    @params_to_transit = params.permit(
+      :start_date, :end_date, :person_num, :room_id
+    ).to_h
+    @reservation = Reservation.new
   end
 
   def edit

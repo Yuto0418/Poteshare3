@@ -1,19 +1,20 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.where("room_id")
+    @reservations = Reservation.where(user_id: current_user.id)
     @rooms = Room.all
   end
   def new
     @reservation = Reservation.new(reservation_params)
     @room = Room.find(params[:room_id])
+    @reservation.total_price = @room.price * @reservation.person_num * (@reservation.end_date.to_date - @reservation.start_date.to_date).to_i
   end
 
   def create
     @reservation = Reservation.new(reservations_params)
-    # @reservation.user_id = current_user.id
+    @reservation.user_id = current_user.id
       if @reservation.save
         flash[:notice] = "予約情報を新規登録しました"
-        redirect_to :reservations
+        redirect_to @reservation
       else
         render "new"
       end
@@ -21,6 +22,7 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+    @room = @reservation.room
   end
 
   def edit

@@ -19,7 +19,8 @@
             <%= f.text_field :end_date ,class: "form-control mb-4",:readonly => true %>
             <h6 class="reservations-new-check-content">使用日数 :<%= (@reservation.end_date - @reservation.start_date).to_i %> 日</h6>
             <h6 class="reservations-new-check-content">人数 : <%= f.hidden_field :person_num, value: params[:person_num] %><%= @reservation.person_num %>人</h6>
-            
+            <%= f.label :total_price ,"合計金額" %>
+            <%= f.number_field :total_price ,class: "form-control mb-4",:readonly => true %>
             
             <p class="reservations-new-check-content">上記内容でよろしければ「予約を確定」を押してください</p>
             <%= f.submit "予約を確定", class: "btn btn-primary form-control my-3" %>

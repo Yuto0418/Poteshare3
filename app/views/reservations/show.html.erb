@@ -1,0 +1,40 @@
+<div class="clearfix"></div>
+<div class="notifications">
+  <div class="notice">
+    <% if flash.notice %>
+      <p class="notice"><%= flash.notice %></p>
+    <% end %>
+  </div>
+</div>
+<div class="container-fiuld user"> 
+  <div class="row-1">
+    <div class="col-md-12 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row-1">
+            <label class="col-md-3" for="room">予約した部屋</label>
+            <div class="col-md-9"><%= link_to @room.room_name, @room %></div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row-1">
+            <label class="col-md-3" for="start_date">開始日</label>
+            <div class="col-md-9"><%= @reservation.start_date %></div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row-1">
+            <label class="col-md-3" for="end_date">終了日</label>
+            <div class="col-md-9"><%= @reservation.end_date %></div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row-1">
+            <label class="col-md-3" for="end_date">価格</label>
+            <div class="col-md-9"><%= @reservation.total_price %>円</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

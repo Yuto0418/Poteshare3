@@ -26,7 +26,7 @@
         <td><%= image_tag room.image.to_s,class: "reservations-image" %></td>
         <td class="posts-name"><%= link_to "#{room.room_name}", room %></td>
         <td class="posts-content"><%= room.description %></td>
-        <td class="price-icon"></td>
+        <td class="price-icon"><%= reservation.total_price %></td>
         <td><%= reservation.start_date %></td>
         <td><%= reservation.end_date %></td>
         <td><%= reservation.created_at %></td>

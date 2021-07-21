@@ -21,7 +21,7 @@
           <!-- ユーザーがログインしていた時の処理 -->
             <h4 class="nav-item d-sm-inline-block d-none"> <%= current_user.name %> </h4>
             <div class="nav-item" id="nav_f">
-              <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="">
+              <%= image_tag current_user.image_name.to_s ,class: "mx-3 p-1 host-icon nav-trigger" %>
               <ul class="header-nav-menu" id="target">
                 <li><%= link_to "ルーム登録",'/rooms/new', class:'list' %></li>
                 <li><%= link_to "予約済みルーム一覧",'/reservations/index', class:'list' %></li>

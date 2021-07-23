@@ -1,6 +1,11 @@
 class RoomsController < ApplicationController
+  def search
+    @q = Room.ransack(params[:q])
+    @results = @q.result(distinct: true)
+    @count = @results.count
+  end
   def index
-    @rooms = current_user.rooms.all
+    @rooms = Room.all
   end
   
   def new
@@ -25,7 +30,6 @@ class RoomsController < ApplicationController
     ).to_h
     @reservation = Reservation.new
   end
-
   def edit
   end
 
@@ -42,4 +46,5 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:room_name, :description, :price, :address, :image, :user_id)
     end
+    
 end

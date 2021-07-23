@@ -38,6 +38,14 @@
         </div>
       </div>
     </header>
+    <div class="clearfix"></div>
+    <div class="notifications">
+      <div class="notice">
+        <% if flash.notice %>
+          <p class="notice"><%= flash.notice %></p>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
     <footer class="footer">
       <p>© 2021 POTEPAN.INC.</p>

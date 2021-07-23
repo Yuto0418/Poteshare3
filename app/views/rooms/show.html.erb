@@ -1,12 +1,10 @@
-<div class="clearfix"></div>
-<div class="notifications"></div>
 <div class="container room-show">
   <div class="row-1">
     <div class="col-md-8">
       <%= image_tag @room.image.to_s ,class: "room-show-image" %>
       <div class="room-show-detile">
         <div class="room-show-detile-icon">
-          <a href="/"><%= image_tag @room.image.to_s ,class: "host-icon" %></a>
+          <%= image_tag @room.user.image_name.to_s ,class: "host-icon" %>
         </div>
         <div class="room-show-profile">
           <p class="room-show-profile-name"><%= @room.room_name %></p>

@@ -1,12 +1,4 @@
-<div class="clearfix"></div>
 
-<div class="notifications">
-  <div class="notice">
-    <% if flash.notice %>
-      <p class="notice"><%= flash.notice %></p>
-    <% end %>
-  </div>
-</div>
 <div class="top">
   <div class="top-main">
     <div class="container">
@@ -14,6 +6,12 @@
         <div class="form-fream">
           <div class="form-area">
             <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
+            <%= search_form_for @q, url: '/rooms/search' do |f| %>
+            <%= f.label :address_cont, 'エリア' %>
+            <%= f.search_field :address_cont, class:'form-control mb-4' %>
+            <br>
+            <%= f.submit '検索',class:'form-control btn-primary mb-4' %>
+            <% end %>
           </div>
         </div>
       </div>

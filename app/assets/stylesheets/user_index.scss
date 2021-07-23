@@ -71,13 +71,10 @@ img {
   vertical-align: middle;
   border-style: none;
 }
-.row-1 {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+label {
+  margin-bottom: 0.5rem;
+}
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem!important;
+  margin-top: 0;
 }

@@ -4,9 +4,9 @@
     <title>Poteshare3</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   </head>
 
   <body>
@@ -14,12 +14,23 @@
       <div class="header-inner">
         <div class="header-left-nav">
           <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+          <%= search_form_for @q, url: '/rooms/search' do |f| %>
+            <div class="header-sharch d-lg-inline-block">
+              <%= f.search_field :address_cont, class:'form-control',placeholder: 'エリア' %>
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="header-sharch d-lg-inline-block">
+              <%= f.search_field :room_name_or_description_cont, class:'form-control',placeholder: 'キーワード' %>
+              <i class="fas fa-search"></i>
+            </div>
+            <%= f.submit '検索', class: "d-none" %>
+          <% end %>
         </div>
         <div class="header-right-nav">
         <div class="nav-item">
           <% if user_signed_in? %> 
           <!-- ユーザーがログインしていた時の処理 -->
-            <h4 class="nav-item d-sm-inline-block d-none"> <%= current_user.name %> </h4>
+            <h4 class="nav-item d-sm-inline-block"> <%= current_user.name %> </h4>
             <div class="nav-item" id="nav_f">
               <%= image_tag current_user.image_name.to_s ,class: "mx-3 p-1 host-icon nav-trigger" %>
               <ul class="header-nav-menu" id="target">

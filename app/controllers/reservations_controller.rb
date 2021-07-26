@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
     @room = Room.find(params[:room_id])
     @reservation.total_price = @room.price * @reservation.person_num * (@reservation.end_date.to_date - @reservation.start_date.to_date).to_i
   end
-
   def create
     @reservation = Reservation.new(reservations_params)
     @reservation.user_id = current_user.id
@@ -16,7 +15,6 @@ class ReservationsController < ApplicationController
         render "new"
       end
   end
-
   def show
     @reservation = Reservation.find(params[:id])
     @room = @reservation.room
@@ -25,13 +23,6 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.where(user_id: current_user.id)
   end
-
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy

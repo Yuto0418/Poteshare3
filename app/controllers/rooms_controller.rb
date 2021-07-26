@@ -7,11 +7,9 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.all
   end
-  
   def new
     @room = Room.new
   end
-
   def create
     @room = Room.new(room_params)
     @room.user_id = current_user.id
@@ -22,7 +20,6 @@ class RoomsController < ApplicationController
       render "new"
     end
   end
-
   def show
     @room = Room.find(params[:id])
     @params_to_transit = params.permit(
@@ -30,12 +27,6 @@ class RoomsController < ApplicationController
     ).to_h
     @reservation = Reservation.new
   end
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
     @room = Room.find(params[:id])
     @room.destroy

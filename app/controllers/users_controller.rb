@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def index
     @q = Room.ransack(params[:q])
   end
-  
   def profile
     @user = User.find(current_user.id)
   end
@@ -17,11 +16,8 @@ class UsersController < ApplicationController
     end
   end
   private
-
   def user_params
     params.require(:user).permit(:image_name, :name, :introduction)
   end
-  def search_params
-    params.require(:q).permit!
-  end
+  
 end

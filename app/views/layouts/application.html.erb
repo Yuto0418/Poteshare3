@@ -4,12 +4,62 @@
     <title>Poteshare3</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-left-nav">
+          <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+          <%= search_form_for @q, url: '/rooms/search' do |f| %>
+            <div class="header-sharch d-lg-inline-block">
+              <%= f.search_field :address_cont, class:'form-control',placeholder: 'エリア' %>
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="header-sharch d-lg-inline-block">
+              <%= f.search_field :room_name_or_description_cont, class:'form-control',placeholder: 'キーワード' %>
+              <i class="fas fa-search"></i>
+            </div>
+            <%= f.submit '検索', class: "d-none" %>
+          <% end %>
+        </div>
+        <div class="header-right-nav">
+        <div class="nav-item">
+          <% if user_signed_in? %> 
+          <!-- ユーザーがログインしていた時の処理 -->
+            <h4 class="nav-item d-sm-inline-block"> <%= current_user.name %> </h4>
+            <div class="nav-item" id="nav_f">
+              <%= image_tag current_user.image_name.to_s ,class: "mx-3 p-1 host-icon nav-trigger" %>
+              <ul class="header-nav-menu" id="target">
+                <li><%= link_to "ルーム登録",'/rooms/new', class:'list' %></li>
+                <li><%= link_to "予約済みルーム一覧",'/reservations/index', class:'list' %></li>
+                <li><%= link_to "登録済みルーム一覧", '/rooms/index', class:'list' %></li>
+                <li><%= link_to "設定", '/users/account', class:'list' %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:'list' %></li>
+              </ul>
+            </div>
+          <% else %>
+          <!-- ユーザーがログインしていなかった時の処理 -->
+            <%= link_to "ログイン", new_user_session_path, class: 'btn btn-primary' %> <!-- ログイン画面に移行する -->
+            <%= link_to "登録する", new_user_registration_path, class: 'btn btn-secondary' %> <!-- 新規登録画面に移行する -->
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <div class="clearfix"></div>
+    <div class="notifications">
+      <div class="notice">
+        <% if flash.notice %>
+          <p class="notice"><%= flash.notice %></p>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
+    <footer class="footer">
+      <p>© 2021 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

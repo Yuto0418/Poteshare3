@@ -1,0 +1,52 @@
+.room {
+  width: 100%;
+  padding: 30px 60px;
+}
+.pb-4, .py-4 {
+  padding-bottom: 1.5rem!important;
+}
+.h4, h4 {
+  font-size: 1.5rem;
+}
+.col-xl-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.room-frame-inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+.room-image-out {
+  position: relative;
+  width: 100%;
+  background: #F6F8F9;
+  height: 200px;
+}
+.room-image {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 20px;
+  object-fit: cover;
+}
+.room-profile {
+  width: 100%;
+  padding: 15px;
+}
+.room-profile p {
+  word-break: break-all;
+}
+.room-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+.room-profile-city {
+  font-size: 16px;
+  font-weight: bold;
+}
+.room-profile-price {
+  text-align: right;
+  font-size: 16px;
+  letter-spacing: 1px;
+}

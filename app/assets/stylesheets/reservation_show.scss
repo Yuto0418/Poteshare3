@@ -1,0 +1,34 @@
+.user {
+  width: 100%;
+}
+.user .user-view {
+  background-color: #F6F8F9;
+  border-left: 2px solid #e2e2e2;
+}
+.col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.user .user-view-box {
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
+.user .update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+.user .update-content label {
+  font-weight: bold;
+}
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.col-md-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}

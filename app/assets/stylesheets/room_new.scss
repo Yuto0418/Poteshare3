@@ -1,0 +1,112 @@
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+}
+.room-new {
+  width: 100%;
+}
+
+.room-new .room-nav-pc {
+  height: 100vh;
+}
+.room-new .room-nav {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 15px;
+}
+.room-new .room-nav-pc .active {
+  border-right: 3px solid #4a90e2;
+}
+.room-new .room-nav li {
+  font-size: 18px;
+  padding: 10px;
+}
+.d-lg-block {
+  display: block!important;
+}
+.col-lg-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+.room-new .room-nav-pc .active a {
+  color: #4a90e2;
+}
+.d-lg-none {
+  display: none!important;
+}
+.col-lg-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+.room-new .room-view {
+  background-color: #F6F8F9;
+  border-left: 2px solid #e2e2e2;
+}
+.col-lg-10 {
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+.room-new .room-view-box {
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 50px auto;
+}
+.room-new .update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+.h5, h5 {
+  font-size: 1.25rem;
+}
+.room-new .update-content label {
+  font-weight: bold;
+}
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.required-a::after {
+  content: "必須";
+  color: #fff;
+  background-color: #ff0000a8;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 0 5px;
+}
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem!important;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.col-md-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+textarea.form-control {
+  height: auto;
+}

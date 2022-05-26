@@ -1,0 +1,43 @@
+
+<div class="top">
+  <div class="top-main">
+    <div class="container">
+      <div class="row col-lg-6">
+        <div class="form-fream">
+          <div class="form-area">
+            <p class="form-area-title">Potepan Shareでまだ体験したことのない旅をしよう</p>
+            <%= search_form_for @q, url: '/rooms/search' do |f| %>
+              <%= f.label :address_cont, 'エリア' %>
+              <%= f.search_field :address_cont, class:'form-control mb-4',placeholder: '東京' %>
+              <br>
+              <%= f.submit '検索',class:'form-control btn-primary mb-4' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="panel-area">
+      <h1 class="section-title">おすすめのエリア</h1>
+      <div class="row">
+        <div class="panel-item">
+          <span>東京</span>
+          <a href=""><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg"></a>
+        </div>
+        <div class="panel-item">
+          <span>大阪</span>
+          <a href=""><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg"></a>
+        </div>
+        <div class="panel-item">
+          <span>京都</span>
+          <a href=""><img class="panel-image shadow" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg"></a>
+        </div>
+        <div class="panel-item">
+          <span>札幌</span>
+          <a href=""><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.room-show, .reservations-new {
+  padding: 30px 0;
+}
+.container {
+  max-width: 1140px;
+}
+.room-show-nav, .reservations-new-nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}.offset-3 {
+  margin-left: 25%;
+}
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.room-show-check-content, .reservations-new-check-content {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.room-show-date-select, .reservations-new-date-select {
+  padding: 15px 0;
+}
+.room-show-date-select label, .reservations-new-date-select label {
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.form-control:disabled, .form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+.room-show-check-content, .reservations-new-check-content {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.h6, h6 {
+  font-size: 1rem;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
